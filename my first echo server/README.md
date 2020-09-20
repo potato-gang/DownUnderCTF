@@ -53,7 +53,7 @@ leaving 5 registers for printf arguments. Those would have printf argument numbe
 
 Thus the format string for leaking libc is: `%19$lx`
 
-__2. Overwrite __malloc_hook__  
+__2. Overwrite \_\_malloc_hook__  
 [malloc_hook(3)](https://www.man7.org/linux/man-pages/man3/malloc_hook.3.html) is a special variable inside glibc that lets you override default malloc-behaviour. When malloc is called it checks whether this variable is set and
 transfers control to the hook if so. So it is effectively a function pointer.   
 The format-string that can overwrite the hook is based on `%n`, must be
